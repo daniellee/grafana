@@ -4,11 +4,11 @@ This is an overview of Grafana's architecture using the [C4 Model](https://c4mod
 
 ## System Context Diagram
 
-The big picture of how users interact with Grafana and how Grafana integrates with external systems.
+The System Context Diagram shows the big picture of how users interact with Grafana and how Grafana integrates with external systems.
 
 - Grafana visualizes time series data. The time series data is stored in an external database (like Graphite or Prometheus).
-- The Grafana data (users, dashboards, config) is either stored in an embedded Sqlite database or in an external MySQL or Postgres database.
-- Grafana can optionally integrate with an external system via LDAP or OAuth for authentication on login and for authorizing users (the three main roles: Admin, Editor, Viewer).
+- The Grafana data (users, dashboards, config) is stored in an embedded Sqlite database or in an external database (MySQL or Postgres).
+- Grafana can optionally integrate with an external authentication system (LDAP, OAuth or SAML) for authentication on login and for authorizing users. (the three main roles: Admin, Editor, Viewer).
 - Grafana can integrate with an external email server to send emails for invites and alert notifications.
 
 ![System Context Diagram](./system-context-diagram.png)
